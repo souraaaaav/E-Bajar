@@ -4,11 +4,7 @@ import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs'
 
 const Rating = ({ value, text, color }) => {
 
-    // const RatingField= null
 
-    // for(let i=1;i<=5;i++){
-    //     if(value >=
-    // }
 
     return (
         <div className="rating">
