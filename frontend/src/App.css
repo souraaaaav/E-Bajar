@@ -1,32 +1,37 @@
 main {
-  min-height: 80vh;
+    min-height: 80vh;
 }
 
 nav a {
-  position: relative;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  color: #a0a0a0;
-  font-size: 18px;
-  letter-spacing: 0.5px;
-  padding: 0 10px;
+    position: relative;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    color: #a0a0a0;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
 }
 
 nav a:after {
-  content: "";
-  position: absolute;
-  background-color: #ff3c78;
-  height: 3px;
-  width: 0;
-  left: 0;
-  bottom: -10px;
-  transition: 0.3s;
+    content: "";
+    position: absolute;
+    background-color: #ff3c78;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: 0.3s;
 }
 
 nav a:hover {
-  color: #ffffff;
+    color: #ffffff;
 }
 
 nav a:hover:after {
-  width: 100%;
+    width: 100%;
 }
+
+
+/* nav a.active:after {
+    width: 100%;
+} */

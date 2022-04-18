@@ -9,7 +9,8 @@ import Header from './components/Header/Header';
 import HomeScreen from "./containers/HomeScreen/HomeScreen";
 import ProductScreen from "./containers/ProductScreen/ProductScreen";
 
-const App = () => {
+const App = (props) => {
+  console.log(props)
   useEffect(() => {
     getTitle()
   }, [])
@@ -25,7 +26,7 @@ const App = () => {
         <Container>
           <Routes>
             <Route path="/" element={<HomeScreen />} exact />
-            <Route path="product/:id" element={<ProductScreen />} />
+            <Route path="product/:productId" element={<ProductScreen />} />
           </Routes>
         </Container>
       </main>
