@@ -12,7 +12,7 @@ const ProductScreen = (props) => {
         axios.get(`http://127.0.0.1:8000/api/products/${productParam.productId}`)
             .then(res => {
                 setProduct(res.data)
-                console.log(res)
+                console.log('res', res)
             })
             .catch(err => {
                 alert('hukka')
