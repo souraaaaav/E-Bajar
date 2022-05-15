@@ -1,13 +1,12 @@
-from email.mime import image
-from email.policy import default
-from itertools import product
-from pickle import TRUE
+import os
 
 from django.contrib.auth.models import User
 from django.db import models
-
+from embed_video.fields import EmbedVideoField
 
 # Create your models here.
+
+
 class Product(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     name = models.CharField(max_length=200, null=True, blank=True)

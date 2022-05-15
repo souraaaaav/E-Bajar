@@ -33,7 +33,7 @@ const ProductScreen = (props) => {
                 <Link to='/' className='btn btn-light my-3'>Go Back</Link>
                 <Row>
                     <Col md={6}>
-                        <Image src={require(`../../assets/images/productImage/${product.image}`)} alt={product.name} fluid />
+                        <Image src={`http://localhost:8000${product.image}`} alt={product.name} fluid />
                     </Col>
 
                     <Col md={3}>

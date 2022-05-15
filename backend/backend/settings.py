@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "corsheaders",
     "base.apps.BaseConfig",
+    "embed_video",
 ]
 
 MIDDLEWARE = [
