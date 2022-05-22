@@ -1,36 +1,36 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+
+import React, { useEffect } from 'react'
 import { Col, Row } from 'react-bootstrap'
-// import products from '../../assets/javaScript/products'
+import { useDispatch, useSelector } from 'react-redux'
+import { listProducts } from '../../actions/productActions'
+import Error404 from '../../components/Error/Error404/Error404'
 import Product from '../../components/Product/Product'
 
 const HomeScreen = () => {
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/products/`)
-            .then(res => {
-                setProducts(res.data)
-                console.log('res', res)
-            })
-            .catch(err => {
-                alert('hukka')
-                console.log(err);
-            })
-    }, [])
+    const dispatch = useDispatch();
+    const productList = useSelector(state => state.productList)
+    const { error, loading, products } = productList
 
+    useEffect(() => {
+        dispatch(listProducts())
+    }, [dispatch])
 
     return (
         <div>
-            <h1>Latest Product</h1>
-            <Row>
-                {
-                    products.map(product => (
-                        <Col key={product._id} sm={12} md={6} lg={4} xl={3} >
-                            <Product product={product} />
-                        </Col>
-                    ))
-                }
-            </Row>
+            {error ? null : <h1>Latest Product</h1>}
+
+            {loading ? <h2>Loading...</h2>
+                : error ? <Error404 />
+                    :
+                    <Row>
+                        {products.map(product => (
+                            <Col key={product._id} sm={12} md={6} lg={4} xl={3} >
+                                <Product product={product} />
+                            </Col>
+                        ))}
+                    </Row>
+            }
+
         </div>
     )
 }
