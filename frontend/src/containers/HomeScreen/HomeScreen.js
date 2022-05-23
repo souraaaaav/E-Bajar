@@ -1,7 +1,7 @@
-
 import React, { useEffect } from 'react'
 import { Col, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
+import { SpinnerDotted } from 'spinners-react'
 import { listProducts } from '../../actions/productActions'
 import Error404 from '../../components/Error/Error404/Error404'
 import Product from '../../components/Product/Product'
@@ -18,8 +18,7 @@ const HomeScreen = () => {
     return (
         <div>
             {error ? null : <h1>Latest Product</h1>}
-
-            {loading ? <h2>Loading...</h2>
+            {loading ? <SpinnerDotted size={'100px'} style={{ display: 'block', margin: 'auto' }} color={'black'} />
                 : error ? <Error404 />
                     :
                     <Row>
@@ -29,6 +28,7 @@ const HomeScreen = () => {
                             </Col>
                         ))}
                     </Row>
+
             }
 
         </div>
